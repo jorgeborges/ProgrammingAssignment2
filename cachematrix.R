@@ -1,8 +1,8 @@
 ## Calculates the inverse of a matrix and caches the result. If the inverse
-## is requested again, it return the cached value if the matrix hasn't change
+## is requested again, it returns the cached value if the matrix hasn't change
 
 ## Creates a special matrix object that can cache its inverse
-
+## To be used as an input for for cacheSolve function
 makeCacheMatrix <- function(x = matrix()) {
     i <- NULL
     
@@ -21,9 +21,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## computes the inverse of the special matrix returned by makeCacheMatrix above
-## Return a matrix that is the inverse of 'x'
-
+## Computes the inverse of the special matrix returned by makeCacheMatrix above
+## If there is a cache from a previous calculation, it returns that
 cacheSolve <- function(x, ...) {
     i <- x$getinverse()
     
